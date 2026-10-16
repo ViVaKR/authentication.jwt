@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <PackageId>ViVaKR.AuthLibrary</PackageId>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>ViVaKR</Authors>
     <Description>JWT authentication library</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
