@@ -9,7 +9,7 @@ Stop copy-pasting the same classes into every project.
 [![NuGet](https://img.shields.io/nuget/v/ViVaKR.AuthLibrary.svg)](https://www.nuget.org/packages/ViVaKR.AuthLibrary)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[한국어](README.md)
+[한국어](README.kr.md)
 
 ## Features
 

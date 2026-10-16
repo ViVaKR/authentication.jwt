@@ -8,7 +8,7 @@ ASP.NET Core API에서 **JWT 기반 인증**을 구성할 때 거의 매번 똑�
 [![NuGet](https://img.shields.io/nuget/v/ViVaKR.AuthLibrary.svg)](https://www.nuget.org/packages/ViVaKR.AuthLibrary)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-[English](README.en.md)
+[English](README.md)
 
 ## 특징
 
