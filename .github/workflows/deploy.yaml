@@ -3,13 +3,13 @@ name: Publish to NuGet
 on:
   push:
     tags:
-      - 'v*' # 🎯 v1.0.0 같은 버전 태그를 붙여서 push할 때만 벼락같이 작동
+      - 'v*'
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write # 🛡️ 누겟 마당에 '임시 1회용 마패'를 요청하는 특권!
+      id-token: write
       contents: read
 
     steps:
@@ -19,10 +19,16 @@ jobs:
       - name: 2. .NET 환경 세팅
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '10.0.x' # 전하의 프로젝트 닷넷 버전에 맞춤
+          dotnet-version: '10.0.x'
 
       - name: 3. 패키지 빌드 및 압축 (Pack)
         run: dotnet pack ./AuthLibrary/AuthLibrary.csproj -c Release
 
-      - name: 4. 누겟 마당으로 임시 마패 자동 출두!
-        run: dotnet nuget push ./AuthLibrary/bin/Release/*.nupkg --source https://nuget.org --skip-duplicate
+      - name: 4. NuGet 임시 API 키 발급 (OIDC)
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: vivakr
+
+      - name: 5. NuGet 푸시
+        run: dotnet nuget push ./AuthLibrary/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --skip-duplicate
