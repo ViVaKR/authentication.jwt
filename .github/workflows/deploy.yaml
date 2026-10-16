@@ -22,7 +22,7 @@ jobs:
           dotnet-version: '10.0.x' # 전하의 프로젝트 닷넷 버전에 맞춤
 
       - name: 3. 패키지 빌드 및 압축 (Pack)
-        run: dotnet pack -c Release
+        run: dotnet pack ./AuthLibrary/AuthLibrary.csproj -c Release
 
       - name: 4. 누겟 마당으로 임시 마패 자동 출두!
-        run: dotnet nuget push ./bin/Release/*.nupkg --source https://nuget.org --skip-duplicate
+        run: dotnet nuget push ./AuthLibrary/bin/Release/*.nupkg --source https://nuget.org --skip-duplicate
