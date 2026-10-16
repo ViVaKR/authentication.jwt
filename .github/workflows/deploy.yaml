@@ -28,7 +28,7 @@ jobs:
         id: login
         uses: NuGet/login@v1
         with:
-          user: KimBurnJun
+          user: KimBurmJun
 
       - name: 5. NuGet 푸시
         run: dotnet nuget push ./AuthLibrary/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --skip-duplicate
